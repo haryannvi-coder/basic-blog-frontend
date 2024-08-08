@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom"
 
 export function TopBar(){
     return <div>
-        topbar
+        <Link to="/signin" >Signin</Link>
+        <Link to="/signup" >Signup</Link>
     </div>
 }
