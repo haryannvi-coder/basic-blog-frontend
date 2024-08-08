@@ -9,7 +9,7 @@ export function Dashboard(){
 
     useEffect(() =>{
         async function getBlogs(){
-            const res = await axios.get(`http://localhost:3000/api/v1/blog/getBlogs`)
+            const res = await axios.get(`https://basic-blog-backend.onrender.com/api/v1/blog/getBlogs`)
             setBlogs(res.data)
         }
         getBlogs()
