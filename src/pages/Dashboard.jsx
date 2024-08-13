@@ -16,7 +16,7 @@ export function Dashboard(){
         getBlogs()
     }, [])
 
-    return <div className="container mx-auto px-4" >
+    return <div className="container mx-auto px-4 bg-green-100" >
         <TopBar setFilter={setFilter} />
         <div className="flex flex-wrap justify-around gap-4">
             {blogs.map((blog, id) => {

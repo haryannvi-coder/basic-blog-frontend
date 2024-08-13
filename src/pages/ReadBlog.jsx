@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom"
+import { useNavigate, useSearchParams } from "react-router-dom"
+import { Button } from "../components/Button";
 
 export function ReadBlog(){
     const [searchParams] = useSearchParams()
     const blogId = searchParams.get("blogId");
     const [blog, setBlog] = useState({})
+    const navigate = useNavigate()
 
     useEffect(() => {
         async function getBlog(){
@@ -26,9 +28,24 @@ export function ReadBlog(){
         getBlog()        
     }, [blogId])
 
-    return <>
-        {blog.title}
-        {blog.description}
-        {blog.content}
-    </>
+    return <div className="bg-green-100 h-screen" >
+        <Button label={"Edit"} onClick={() => {
+            navigate(`/editBlog?blogId=${blogId}`)
+        }} />
+
+        <Button label={"Delete"} onClick={() => {
+            navigate(`/deleteBlog?blogId=${blogId}`)
+        }} />
+
+        <div className="text-center font-bold text-4xl p-2" >
+            {blog.title}
+        </div>
+        <div className="text-center font-serif text-xl p-2" >
+            {blog.description}            
+        </div>
+        <div className="text-center" >
+            {blog.content}            
+        </div>
+
+    </div>
 }
