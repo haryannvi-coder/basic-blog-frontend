@@ -29,7 +29,7 @@ export function EditBlog(){
         <Button onClick={async () => {
             try {
                 const token = localStorage.getItem("token"); 
-                await axios.put(`http://localhost:3000/api/v1/blog/editBlog?blogId=${blogId}`, {
+                await axios.put(`https://basic-blog-backend.onrender.com/api/v1/blog/editBlog?blogId=${blogId}`, {
                     title,
                     description,
                     content
@@ -42,7 +42,7 @@ export function EditBlog(){
             }
             catch (err){
                 toast.error('There was an error updating blog. Please try again.');
-                
+
             }
         }} label={"Save Blog"} />
     </div>

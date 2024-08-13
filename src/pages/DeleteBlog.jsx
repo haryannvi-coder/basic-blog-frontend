@@ -12,7 +12,7 @@ export function DeleteBlog(){
     async function deleteBlog() {
         const token = localStorage.getItem("token"); 
         try {
-            const response = await axios.delete(`http://localhost:3000/api/v1/blog/deleteBlog`, {
+            const response = await axios.delete(`https://basic-blog-backend.onrender.com/api/v1/blog/deleteBlog`, {
                 params: { blogId }, // Pass blogId as a query parameter
                 headers: {
                     Authorization: `Bearer ${token}` // Add auth token if required

@@ -42,7 +42,7 @@ export function Signup(){
 
             <Button onClick={async () => {
                 try {
-                    const res = await axios.post(`http://localhost:3000/api/v1/user/signup`, {
+                    const res = await axios.post(`https://basic-blog-backend.onrender.com/api/v1/user/signup`, {
                         firstName, 
                         lastName,
                         email,

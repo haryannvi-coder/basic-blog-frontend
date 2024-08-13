@@ -13,7 +13,7 @@ export function ReadBlog(){
         async function getBlog(){
             if (blogId) {
                 try {
-                    const res = await axios.get(`http://localhost:3000/api/v1/blog/readBlog`, {
+                    const res = await axios.get(`https://basic-blog-backend.onrender.com/api/v1/blog/readBlog`, {
                         params: { blogId } // Pass blogId as a query parameter
                     });
                     setBlog(res.data);
