@@ -8,14 +8,13 @@ export function Dashboard(){
     const [filter, setFilter] = useState("")
     const [blogs, setBlogs] = useState([]);
 
-    useEffect(() => {
-    async function getBlogs(){
-        const res = await axios.get(`http://localhost:3000/api/v1/blog/getBlogs?filter=${filter}`)
-        setBlogs(res.data)
-    }
-    getBlogs()        
-    }, [filter])
-
+    useEffect(() =>{
+        async function getBlogs(){
+            const res = await axios.get(`http://localhost:3000/api/v1/blog/getBlogs`)
+            setBlogs(res.data)
+        }
+        getBlogs()
+    }, [])
 
     return <div className="container mx-auto px-4" >
         <TopBar setFilter={setFilter} />
