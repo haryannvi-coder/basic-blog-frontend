@@ -2,6 +2,10 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { Signin } from './pages/Signin'
 import { Signup } from './pages/Signup'
 import { Dashboard } from './pages/Dashboard'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import { AddBlog } from './pages/AddBlog';
+import { ReadBlog } from './pages/ReadBlog';
 
 function App() {
 
@@ -12,8 +16,11 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
-          <Route path="/dashboard" element={<Dashboard />}/>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/addBlog" element={<AddBlog />} />
+          <Route path="/readBlog" element={<ReadBlog />} />
         </Routes>
+        <ToastContainer />
       </BrowserRouter>
     </>
   )
