@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom"
 import { Button } from "../components/Button";
+import { TopBar } from "../components/TopBar";
 
 export function ReadBlog(){
     const [searchParams] = useSearchParams()
@@ -13,7 +14,7 @@ export function ReadBlog(){
         async function getBlog(){
             if (blogId) {
                 try {
-                    const res = await axios.get(`https://basic-blog-backend.onrender.com/api/v1/blog/readBlog`, {
+                    const res = await axios.get(`https://basic-blog-backend-production.up.railway.app/api/v1/blog/readBlog`, {
                         params: { blogId } // Pass blogId as a query parameter
                     });
                     setBlog(res.data);
@@ -28,7 +29,9 @@ export function ReadBlog(){
         getBlog()        
     }, [blogId])
 
-    return <div className="bg-green-100 h-screen" >
+    return <div className=" h-screen" >
+        <TopBar  />
+        
         <Button label={"Edit"} onClick={() => {
             navigate(`/editBlog?blogId=${blogId}`)
         }} />

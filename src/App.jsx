@@ -8,6 +8,7 @@ import { AddBlog } from './pages/AddBlog'
 import { ReadBlog } from './pages/ReadBlog'
 import { EditBlog } from './pages/EditBlog'
 import { DeleteBlog } from './pages/DeleteBlog'
+import { Logout } from './pages/Logout'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/addBlog" element={<AddBlog />} />
           <Route path="/readBlog" element={<ReadBlog />} />

@@ -10,15 +10,15 @@ export function Dashboard(){
 
     useEffect(() =>{
         async function getBlogs(){
-            const res = await axios.get(`https://basic-blog-backend.onrender.com/api/v1/blog/getBlogs`)
+            const res = await axios.get(`https://basic-blog-backend-production.up.railway.app/api/v1/blog/getBlogs?filter=${filter}`)
             setBlogs(res.data)
         }
         getBlogs()
-    }, [])
+    }, [filter])
 
-    return <div className="container mx-auto px-4 bg-green-100" >
+    return <div className="container mx-auto px-4 " >
         <TopBar setFilter={setFilter} />
-        <div className="flex flex-wrap justify-around gap-4">
+        <div className="my-5 flex flex-wrap justify-around gap-4">
             {blogs.map((blog, id) => {
                 return (
                     <BlogCard  key={id} title={blog.title}  description={blog.description} blogId={blog._id} />

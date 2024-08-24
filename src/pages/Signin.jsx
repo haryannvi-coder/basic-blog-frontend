@@ -31,7 +31,7 @@ export function Signin(){
 
             <Button onClick={async () => {
                 try {
-                    const res = await axios.post(`https://basic-blog-backend.onrender.com/api/v1/user/signin`, {
+                    const res = await axios.post(`https://basic-blog-backend-production.up.railway.app/api/v1/user/signin`, {
                         email,
                         password
                     })
@@ -42,9 +42,11 @@ export function Signin(){
 
                     setTimeout(() => {
                         navigate('/dashboard')
-                    }, 3000);  // Redirect to dashboard page
+                    }, 1000);  // Redirect to dashboard page
 
                 } catch (error) {
+                    console.log(res);
+                    
                     toast.error('There was an error signing in. Please try again.');
                 }
             }} label={"Sign In"} />

@@ -42,7 +42,7 @@ export function Signup(){
 
             <Button onClick={async () => {
                 try {
-                    const res = await axios.post(`https://basic-blog-backend.onrender.com/api/v1/user/signup`, {
+                    const res = await axios.post(`https://basic-blog-backend-production.up.railway.app/api/v1/user/signup`, {
                         firstName, 
                         lastName,
                         email,
@@ -53,9 +53,7 @@ export function Signup(){
 
                     toast.success('Signup successful! Redirecting to dashboard...'); // Show success message
 
-                    setTimeout(() => {
-                        navigate('/dashboard')
-                    }, 3000);  // Redirect to dashboard page
+                    navigate('/dashboard')
 
                 } catch (error) {
                     toast.error('There was an error signing up. Please try again.');
