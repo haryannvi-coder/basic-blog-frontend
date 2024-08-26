@@ -18,7 +18,7 @@ export function Signup(){
 
     const navigate = useNavigate();
 
-    return <div className="bg-green-100 h-screen flex justify-center items-center">
+    return <div className=" h-screen flex justify-center items-center">
         <div className="shadow-2xl border-black font-mono text-center" >
             <Heading label={"Signup"} />
 

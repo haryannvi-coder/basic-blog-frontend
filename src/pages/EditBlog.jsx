@@ -13,19 +13,28 @@ export function EditBlog(){
     const [description, setDescription] = useState("")
     const [content, setContent] = useState("")
 
-    return <div className="text-center">
-        <TopBar  />
-        <InputBox onChange={(e) => {
-            setTitle(e.target.value)
-        }} label={"Title"} placeholder={"AI"} />
+    return <div className="min-h-screen dark:bg-slate-900 px-2" >
+    <TopBar  />
+    <div className="my-4 space-y-4" >
+        <input placeholder={"Title"} onChange={(e) => {
+                setTitle(e.target.value);
+            }} 
+            className="w-full p-2 border rounded-md bg-white dark:bg-slate-800 dark:text-white border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
 
-        <InputBox onChange={(e) => {
-            setDescription(e.target.value)
-        }} label={"Description"} placeholder={"AI and its challenges"} />
+        <input onChange={(e) => {
+                setDescription(e.target.value);
+            }} placeholder={"Description"}
+            className="w-full p-2 border rounded-md bg-white dark:bg-slate-800 dark:text-white border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-green-500 "
+        />
 
-        <input type="" onChange={(e) => {
-            setContent(e.target.value)
-        }}  placeholder={"content"} />
+        <textarea
+            onChange={(e) => {
+            setContent(e.target.value);
+            }}
+            placeholder="Content"
+            className="w-full p-2 h-32 border rounded-md bg-white dark:bg-slate-800 dark:text-white border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
 
         <Button onClick={async () => {
             try {
@@ -45,5 +54,7 @@ export function EditBlog(){
                 toast.error("You aren't allowed to update this blog");
             }
         }} label={"Save Blog"} />
+        </div>
+     
     </div>
 }

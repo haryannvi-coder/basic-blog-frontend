@@ -29,26 +29,35 @@ export function ReadBlog(){
         getBlog()        
     }, [blogId])
 
-    return <div className=" h-screen" >
-        <TopBar  />
-        
-        <Button label={"Edit"} onClick={() => {
-            navigate(`/editBlog?blogId=${blogId}`)
-        }} />
+    return  <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <TopBar />
 
-        <Button label={"Delete"} onClick={() => {
-            navigate(`/deleteBlog?blogId=${blogId}`)
-        }} />
+    <div className="container mx-auto p-4">
+      <div className="flex justify-center space-x-4 mb-4">
+        <Button 
+          label={"Edit"} 
+          onClick={() => navigate(`/editBlog?blogId=${blogId}`)}
+          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition-colors duration-300"
+        />
+        <Button 
+          label={"Delete"} 
+          onClick={() => navigate(`/deleteBlog?blogId=${blogId}`)}
+          className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded transition-colors duration-300"
+        />
+      </div>
 
-        <div className="text-center font-bold text-4xl p-2" >
-            {blog.title}
-        </div>
-        <div className="text-center font-serif text-xl p-2" >
-            {blog.description}            
-        </div>
-        <div className="text-center" >
-            {blog.content}            
-        </div>
+      <div className="text-center font-bold text-4xl mb-4 p-4 bg-white dark:bg-gray-800 rounded-md shadow-md dark:shadow-lg">
+        {blog.title}
+      </div>
 
+      <div className="text-center font-serif text-xl mb-4 p-4 bg-white dark:bg-gray-800 rounded-md shadow-md dark:shadow-lg">
+        {blog.description}
+      </div>
+
+      <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-md shadow-md dark:shadow-lg">
+        {blog.content}
+      </div>
     </div>
+  </div>
+  
 }

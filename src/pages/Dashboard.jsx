@@ -16,7 +16,7 @@ export function Dashboard(){
         getBlogs()
     }, [filter])
 
-    return <div className="container mx-auto px-4 " >
+    return <div className="min-h-screen px-2 dark:bg-slate-900" >
         <TopBar setFilter={setFilter} />
         <div className="my-5 flex flex-wrap justify-around gap-4">
             {blogs.map((blog, id) => {
@@ -24,7 +24,10 @@ export function Dashboard(){
                     <BlogCard  key={id} title={blog.title}  description={blog.description} blogId={blog._id} />
                 )
             })}
-        </div>        
+        </div>    
+        <footer className="py-4 bg-gray-100 dark:bg-slate-800 text-center text-gray-800 dark:text-gray-300">
+        <div>Made with ❤️ by Rohit Rao</div>
+    </footer>    
     </div>
-
+    
 }

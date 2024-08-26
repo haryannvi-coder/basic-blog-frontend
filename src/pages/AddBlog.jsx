@@ -15,38 +15,49 @@ export function AddBlog(){
     const editorRef = useRef()
     const navigate = useNavigate()
 
-    return <div>
+    return <div className="min-h-screen dark:bg-slate-900 px-2" >
         <TopBar  />
-        <InputBox onChange={(e) => {
-            setTitle(e.target.value)
-        }} label={"Title"} placeholder={"AI"} />
+        <div className="my-4 space-y-4" >
+            <input placeholder={"Title"} onChange={(e) => {
+                    setTitle(e.target.value);
+                }} 
+                className="w-full p-2 border rounded-md bg-white dark:bg-slate-800 dark:text-white border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
 
-        <InputBox onChange={(e) => {
-            setDescription(e.target.value)
-        }} label={"Description"} placeholder={"AI and its challenges"} />
+            <input onChange={(e) => {
+                    setDescription(e.target.value);
+                }} placeholder={"Description"}
+                className="w-full p-2 border rounded-md bg-white dark:bg-slate-800 dark:text-white border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-green-500 "
+            />
 
-        <textarea onChange={(e) => {
-            setContent(e.target.value)
-        }} name="" id=""></textarea>
+            <textarea
+                onChange={(e) => {
+                setContent(e.target.value);
+                }}
+                placeholder="Content"
+                className="w-full p-2 h-32 border rounded-md bg-white dark:bg-slate-800 dark:text-white border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
 
-        <Button onClick={async () => {
-            try {
-                const token = localStorage.getItem("token"); 
-                const res = await axios.post(`https://basic-blog-backend-production.up.railway.app/api/v1/blog/addBlog`, {
-                    title,
-                    description,
-                    content
-                }, {
-                    headers : {
-                        "Authorization" : `Bearer ${token}` // Include the token in the headers
-                    }
-                })   
-                toast.success('Blog added successful!'); // Show success message
-                navigate(`/dashboard`)
-            }
-            catch (err){
-                toast.error("Failed to add blog");
-            }
-        }} label={"Submit Blog"} />
+            <Button onClick={async () => {
+                try {
+                    const token = localStorage.getItem("token"); 
+                    const res = await axios.post(`https://basic-blog-backend-production.up.railway.app/api/v1/blog/addBlog`, {
+                        title,
+                        description,
+                        content
+                    }, {
+                        headers : {
+                            "Authorization" : `Bearer ${token}` // Include the token in the headers
+                        }
+                    })   
+                    toast.success('Blog added successful!'); // Show success message
+                    navigate(`/dashboard`)
+                }
+                catch (err){
+                    toast.error("Failed to add blog");
+                }
+            }} label={"Submit"} />
+        </div>
+     
     </div>
 }
