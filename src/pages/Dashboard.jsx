@@ -17,7 +17,7 @@ export function Dashboard(){
     }, [filter])
 
     return <div className="min-h-screen px-2 dark:bg-slate-900" >
-        <TopBar setFilter={setFilter} />
+        <TopBar setFilter={setFilter} homePage={true} />
         <div className="my-5 flex flex-wrap justify-around gap-4">
             {blogs.map((blog, id) => {
                 return (
