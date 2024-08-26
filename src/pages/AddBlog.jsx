@@ -15,7 +15,7 @@ export function AddBlog(){
     const editorRef = useRef()
     const navigate = useNavigate()
 
-    return <div className="min-h-screen dark:bg-slate-900 px-2" >
+    return <div className="min-h-screen dark:bg-slate-900 px-2 " >
         <TopBar  />
         <div className="my-4 space-y-4" >
             <input placeholder={"Title"} onChange={(e) => {
@@ -58,6 +58,5 @@ export function AddBlog(){
                 }
             }} label={"Submit"} />
         </div>
-     
     </div>
 }

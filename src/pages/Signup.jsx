@@ -18,27 +18,27 @@ export function Signup(){
 
     const navigate = useNavigate();
 
-    return <div className=" h-screen flex justify-center items-center">
-        <div className="shadow-2xl border-black font-mono text-center" >
+    return <div className="flex justify-center min-h-screen dark:bg-slate-900">
+        <div className=" text-center m-14 text-gray-200 space-y-4" >
             <Heading label={"Signup"} />
 
             <SubHeading label={"Enter your info to create an account"} />
 
             <InputBox onChange={(e) => {
                 setFirstName(e.target.value)
-            }} label={"First Name"} placeholder={"John"} />
+            }} placeholder={"first name"} />
 
             <InputBox onChange={(e) => {
                 setLastName(e.target.value)
-            }} label={"Last Name"} placeholder={"Dev"} />
+            }} placeholder={"last name"} />
 
             <InputBox  onChange={(e) => {
                 setEmail(e.target.value)
-            }} label={"Email"} placeholder={"john.dev@xom"} />
+            }} placeholder={"email"} />
 
             <InputBox onChange={(e) => {
                 setPassword(e.target.value)
-            }} label={"Password"} placeholder={"pass456"} />
+            }} placeholder={"password"} />
 
             <Button onClick={async () => {
                 try {
