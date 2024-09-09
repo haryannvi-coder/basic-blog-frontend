@@ -2,6 +2,8 @@ import { BlogCard } from "../components/BlogCard";
 import { TopBar } from "../components/TopBar";
 import { useState, useEffect } from "react";
 import axios from "axios"
+import { Footer } from "../components/Footer";
+import { SearchBar } from "../components/SearchBar";
 
 
 export function Dashboard(){
@@ -11,7 +13,8 @@ export function Dashboard(){
     useEffect(() =>{
         async function getBlogs(){
             const res = await axios.get(`https://basic-blog-backend-production.up.railway.app/api/v1/blog/getBlogs?filter=${filter}`)
-            setBlogs(res.data)
+            const sortedBlogs = res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); // Sort by createdAt
+            setBlogs(sortedBlogs);
         }
         getBlogs()
     }, [filter])
@@ -25,9 +28,5 @@ export function Dashboard(){
                 )
             })}
         </div>    
-        <footer className="py-4 bg-gray-100 dark:bg-slate-800 text-center text-gray-800 dark:text-gray-300">
-        <div>Made with ❤️ by Rohit Rao</div>
-    </footer>    
     </div>
-    
 }

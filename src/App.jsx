@@ -9,6 +9,7 @@ import { ReadBlog } from './pages/ReadBlog'
 import { EditBlog } from './pages/EditBlog'
 import { DeleteBlog } from './pages/DeleteBlog'
 import { Logout } from './pages/Logout'
+import { Layout } from './Layout'
 
 function App() {
 
@@ -16,15 +17,17 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/addBlog" element={<AddBlog />} />
-          <Route path="/readBlog" element={<ReadBlog />} />
-          <Route path="/editBlog" element={<EditBlog />} />
-          <Route path="/deleteBlog" element={<DeleteBlog />} />
+          <Route path="/" element={<Layout />} >
+            <Route path="" element={<Dashboard />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="signin" element={<Signin />} />
+            <Route path="logout" element={<Logout />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="addBlog" element={<AddBlog />} />
+            <Route path="readBlog" element={<ReadBlog />} />
+            <Route path="editBlog" element={<EditBlog />} />
+            <Route path="/deleteBlog" element={<DeleteBlog />} />          
+          </Route>
         </Routes>
         <ToastContainer />
       </BrowserRouter>
