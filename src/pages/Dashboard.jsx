@@ -21,7 +21,8 @@ export function Dashboard(){
 
     return <div className="min-h-screen px-2 dark:bg-slate-900" >
         <TopBar setFilter={setFilter} homePage={true} />
-        <div className="my-5 flex flex-wrap justify-around gap-4">
+        <div className="my-5" ></div>
+        <div className=" flex flex-wrap justify-around gap-6">
             {blogs.map((blog, id) => {
                 return (
                     <BlogCard  key={id} title={blog.title}  description={blog.description} blogId={blog._id} />

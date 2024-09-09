@@ -32,8 +32,6 @@ export function TopBar({setFilter, homePage}){
         <></>        
     }
 
-
- 
         <div className="flex items-center justify-between space-x-4" >
             <ThemeButton />
 
