@@ -12,7 +12,7 @@ export function Dashboard(){
 
     useEffect(() =>{
         async function getBlogs(){
-            const res = await axios.get(`https://basic-blog-backend-production.up.railway.app/api/v1/blog/getBlogs?filter=${filter}`)
+            const res = await axios.get(`https://basic-blog-backend.onrender.com/api/v1/blog/getBlogs?filter=${filter}`)
             const sortedBlogs = res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); // Sort by createdAt
             setBlogs(sortedBlogs);
         }
