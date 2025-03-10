@@ -13,7 +13,7 @@ export function DeleteBlog() {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.delete(
-        `https://basic-blog-backend-production.up.railway.app/api/v1/blog/deleteBlog`,
+        `https://basic-blog-backend.onrender.com/api/v1/blog/deleteBlog`,
         {
           params: { blogId }, // Pass blogId as a query parameter
           headers: {
