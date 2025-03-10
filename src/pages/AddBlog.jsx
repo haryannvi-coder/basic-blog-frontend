@@ -41,7 +41,7 @@ export function AddBlog(){
             <Button onClick={async () => {
                 try {
                     const token = localStorage.getItem("token"); 
-                    const res = await axios.post(`https://basic-blog-backend-production.up.railway.app/api/v1/blog/addBlog`, {
+                    const res = await axios.post(`https://basic-blog-backend.onrender.com/api/v1/blog/addBlog`, {
                         title,
                         description,
                         content
