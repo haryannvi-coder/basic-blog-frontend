@@ -39,7 +39,7 @@ export function EditBlog(){
         <Button onClick={async () => {
             try {
                 const token = localStorage.getItem("token"); 
-                await axios.put(`https://basic-blog-backend-production.up.railway.app/api/v1/blog/editBlog?blogId=${blogId}`, {
+                await axios.put(`https://basic-blog-backend.onrender.com/api/v1/blog/editBlog?blogId=${blogId}`, {
                     title,
                     description,
                     content
